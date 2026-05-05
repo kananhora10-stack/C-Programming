@@ -1,0 +1,179 @@
+//  Write a c++ program that take integer value in celsius as input from the user. Convert it into farenheit and print the output.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float celsius, fahrenheit;
+
+    cout << "Enter temperature in Celsius: ";
+    cin >> celsius;
+
+    fahrenheit = (9.0/5.0) * celsius + 32;
+
+    cout << "Temperature in Fahrenheit: " << fahrenheit << endl;
+
+    return 0;
+}
+// input: 45
+// output : 2.22222
+
+// Write a c++ prgram that takes a global integer variable. Initialize to 100 in the main function, take an input from the user. Perform floating point division of the global variable. Find the user input using explicit typecasting and store in  a local.
+
+#include <iostream>
+using namespace std;
+
+int globalVar = 100;
+
+int main() {
+    int userInput;
+    float result;  
+
+    cout << "Enter an integer: ";
+    cin >> userInput;
+
+    result = (float)globalVar / userInput;
+
+    cout << "Result after division: " << result << endl;
+
+    return 0;
+}
+// input : 89
+//output: result after division:1.1236
+
+// Write a cpp program that take 3 integer input representing the side of triangle. Print true if the triangle is equilateral otherwise false. Do this using only logical and relational operator. 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+
+    cout << "Enter three sides of the triangle: ";
+    cin >> a >> b >> c;
+
+    bool isEquilateral = (a == b) && (b == c);
+
+    cout << isEquilateral << endl;
+
+    return 0;
+}
+// input; three sides of a triangle: 12,12,12
+// output; 1
+
+//Write a c++ program that takes 2 integers input a and b. Multiply a by 4 using bit left shift operator and divide b by 8 using right shift operator.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+
+    cout << "Enter two integers (a and b): ";
+    cin >> a >> b;
+
+    int multiplyResult = a << 2;
+
+    int divideResult = b >> 3;
+
+    cout << "a * 4 = " << multiplyResult << endl;
+    cout << "b / 8 = " << divideResult << endl;
+
+    return 0;
+}
+  //input; a=34, b= 40
+//output; a*4=136, b/8=5 
+
+//Write a c++ program that takes two input integer and an operator as an input from the user. Perform the corresponding arithmetic operator on those number withput using if-else statement.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    char op;
+
+    cout << "Enter two integers: ";
+    cin >> a >> b;
+
+    cout << "Enter an operator (+, -, *, /, %): ";
+    cin >> op;
+
+    switch(op) {
+        case '+':
+            cout << "Result: " << a + b << endl;
+            break;
+        case '-':
+            cout << "Result: " << a - b << endl;
+            break;
+        case '*':
+            cout << "Result: " << a * b << endl;
+            break;
+        case '/':
+            if(b != 0)
+                cout << "Result: " << a / b << endl;
+            else
+                cout << "Division by zero not allowed" << endl;
+            break;
+        case '%':
+            if(b != 0)
+                cout << "Result: " << a % b << endl;
+            else
+                cout << "Modulo by zero not allowed" << endl;
+            break;
+        default:
+            cout << "Invalid operator" << endl;
+    }
+
+    return 0;
+}
+// input; two integer= 24,30 ; operator= %
+// output; 24
+
+//Write a c++ program that takes two input integer from the user. Swap their value using temporary variable and print the updated value.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, temp;
+
+    cout << "Enter two integers: ";
+    cin >> a >> b;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout << "After swapping:" << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    return 0;
+}
+//input; 45,56
+// output; after swapping: a=56, b=45
+
+//Write a c++ program that takes 3 integer as an input from the user. Calculate the total sum of these variable and find the average.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    int sum;
+    float average;
+
+    cout << "Enter three integers: ";
+    cin >> a >> b >> c;
+
+    sum = a + b + c;
+    average = sum / 3.0;  
+
+    cout << "Sum = " << sum << endl;
+    cout << "Average = " << average << endl;
+
+    return 0;
+}
+// input; tree integers: 3,4,5
+// output; sum = 3; average = 1
