@@ -1,0 +1,123 @@
+DAY 5 CRT 
+
+1. Use of a function
+
+#include<iostream>
+using namespace std;
+void printmsg()
+{
+    cout<<"hello, jecrc from FUNKtion"<<endl;
+    
+}
+int main()
+{
+    cout<<"hello jecrc"<<endl;
+    printmsg();
+    return 0;
+    
+}
+
+OUTPUT
+hello jecrc
+Hello, jecrc from FUNKtion
+
+2. Write a function that takes the number of Coke bottles as an input. You have to print the total volume of the Coke if each Coke is 250ml.
+
+#include<iostream>
+using namespace std;
+
+void vol(int num){
+    cout<<num*250<<"ml";
+
+}
+int main(){
+    int x;
+    cout<<"write the number of bottles = ";
+    cin>>x;
+    vol(x);
+    return 0;
+    
+}
+
+OUTPUT
+    
+Write the number of bottles = 1
+250ml
+
+3. Write a C++ program that applies 10% discount using reference to update the original bill amount.
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void applyDiscount(double &bill) {
+    bill = bill * 90;
+}
+int main() {
+    double billAmount;
+    cout << "Enter the original bill amount: ";
+    cin >> billAmount;
+    cout << fixed << setprecision(2);
+    cout << "Original bill: $" << billAmount << endl;
+    applyDiscount(billAmount);
+    cout << "Discounted bill (10% off): $" << billAmount << endl;
+    return 0;
+}
+ 
+OUTPUT
+Enter the original bill amount: 5600
+Original bill: $5600.00
+Discounted bill (10% off): $5040.00
+
+4. POINTERS
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+     int value = 100;
+     int *ptr = &value;
+     cout<<" value :"<< *ptr << endl;
+     cout<<" ADDRESS :"<< ptr << endl;
+     *ptr = 200;
+     cout<<" value :"<< *ptr << endl;
+     cout<<" value :"<< value << endl;
+     return 0;
+}
+
+OUTPUT
+
+value:100
+ ADDRESS:0x7ffedbb856d4
+ value:200
+ value:200
+
+5.write a c++ program to swap two numbers using pointers
+
+#include <iostream>
+using namespace std;
+void swap(int *ptr1, int *ptr2) {
+    int temp;
+    temp = *ptr1;    
+    *ptr1 = *ptr2;   
+    *ptr2 = temp;    
+}
+int main() {
+    int num1, num2;
+    cout << "1st number: ";
+    cin >> num1;
+    cout << "2nd number: ";
+    cin >> num2;
+    cout << "\nBefore swapping:" << endl;
+    cout << "num 1 = " << num1 << ", num 2 = " << num2 << endl;
+    swap(&num1, &num2);
+    cout << "\nAfter swapping:" << endl;
+    cout << "num 1 = " << num1 << ", num 2 = " << num2 << endl;
+    return 0;
+}
+ OUTPUT
+
+After swapping:
+num 1 = 7890, num 2 = 3456
+6.
