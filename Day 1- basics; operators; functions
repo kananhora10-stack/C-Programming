@@ -176,3 +176,147 @@ int main() {
 }
 // input; tree integers: 3,4,5
 // output; sum = 3; average = 1
+
+/*
+Problem 11: Age Group Classifier
+Write a program that takes age as input.
+Check if the person is eligible for a discount (age < 12 or ≥ 65)
+ and if they belong to the working age group (18–64).
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age;
+    cin >> age;
+
+    bool discount = (age < 12) || (age >= 65);
+    bool working = (age >= 18) && (age <= 64);
+
+    cout << "Discount Eligible: " << discount << endl;
+    cout << "Working Age: " << working << endl;
+
+    return 0;
+}
+
+/*
+Problem 10: Alphabet Case Checker
+Write a C++ program that takes a character as input.
+Determine whether it is uppercase, lowercase, or not an alphabet. 
+Use relational operators to check the character range and print the appropriate message.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char ch;
+    cin >> ch;
+
+    bool isUpper = (ch >= 'A' && ch <= 'Z');
+    bool isLower = (ch >= 'a' && ch <= 'z');
+
+    cout << "Uppercase: " << isUpper << endl;
+    cout << "Lowercase: " << isLower << endl;
+    cout << "Not a letter: " << !(isUpper || isLower) << endl;
+
+    return 0;
+}
+
+/*
+Problem 9: Login Credential Mockup
+Write a program that checks user login credentials. Compare user input ID and PIN with predefined values and display whether access is granted or denied.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int storedID = 1234;
+    const int storedPIN = 5678;
+
+    int id, pin;
+    cin >> id >> pin;
+
+    bool access = (id == storedID) && (pin == storedPIN);
+
+    cout << "Access Granted: " << access << endl;
+    cout << "Access Denied: " << !access << endl;
+
+    return 0;
+}
+
+/*
+Problem 4: Bitwise Operations
+Write a C++ program that takes two integers as input.
+ Multiply the first number by 4 using a left shift operator,
+ then swap both numbers using XOR without a temporary variable. Print the results.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+
+    a = a << 2;
+
+    // XOR Swap
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+
+    cout << a << "\n"
+         << b << endl;
+
+    return 0;
+}
+
+/*
+Problem 7: Area of Shapes
+Write a program that calculates the area based on user choice: circle,
+ rectangle, or triangle. Take required inputs and display the calculated area.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice;
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        double r;
+        cin >> r;
+        cout << 3.14159 * r * r;
+    }
+    else if (choice == 2)
+    {
+        double l, w;
+        cin >> l >> w;
+        cout << l * w;
+    }
+    else if (choice == 3)
+    {
+        double b, h;
+        cin >> b >> h;
+        cout << 0.5 * b * h;
+    }
+    else
+    {
+        cout << "Invalid choice";
+    }
+
+    return 0;
+}
+
+
+
