@@ -1,5 +1,4 @@
 //  Write a c++ program that take integer value in celsius as input from the user. Convert it into farenheit and print the output.
-
 #include <iostream>
 using namespace std;
 
