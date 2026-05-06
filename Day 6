@@ -128,7 +128,112 @@ public:
 int main()
 {
     Students s1("Saurav", 18);
-    s1.show();
+    s1.show()
+
+    return 0;
+}
+
+// Function overloading
+
+#include <iostream>
+using namespace std;
+
+// Function to add two integers
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function to add two floating-point numbers
+float add(float a, float b) {
+    return a + b;
+}
+
+// Function to add three integers
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+int main() {
+    cout << "Sum of 2 integers: " << add(5, 10) << endl;
+    cout << "Sum of 2 floats: " << add(2.5f, 3.5f) << endl;
+    cout << "Sum of 3 integers: " << add(1, 2, 3) << endl;
+
+    return 0;
+}
+
+// Write a c++ program to create a student management system where we store and display a students details
+A. Name
+B. Roll number
+c. Email-id
+D. Mobile number
+E. Batch 
+f. Crt class number
+Using constructor overloading.
+
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name, email, batch;
+    int rollNo, mobileNo, classNo;
+
+public:
+    // Default Constructor
+    Student() {
+        name = "Not Provided";
+        email = "Not Provided";
+        batch = "Not Provided";
+        rollNo = 0;
+        mobileNo = 0;
+        classNo = 0;
+    }
+
+    // Constructor with basic details
+    Student(string n, int r) {
+        name = n;
+        rollNo = r;
+        email = "Not Provided";
+        mobileNo = 0;
+        batch = "Not Provided";
+        classNo = 0;
+    }
+
+    // Constructor with all details
+    Student(string n, int r, string e, int m, string b, int c) {
+        name = n;
+        rollNo = r;
+        email = e;
+        mobileNo = m;
+        batch = b;
+        classNo = c;
+    }
+
+    // Display Function
+    void display() {
+        cout << "\nStudent Details:" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Roll Number: " << rollNo << endl;
+        cout << "Email ID: " << email << endl;
+        cout << "Mobile Number: " << mobileNo << endl;
+        cout << "Batch: " << batch << endl;
+        cout << "Class Number: " << classNo << endl;
+    }
+};
+
+int main() {
+    // Using default constructor
+    Student s1;
+    
+    // Using constructor with partial details
+    Student s2("Kanan", 101);
+    
+    // Using constructor with all details
+    Student s3("Rahul", 102, "rahul@gmail.com", 987654321, "BCA 2023", 12);
+
+    s1.display();
+    s2.display();
+    s3.display();
 
     return 0;
 }
