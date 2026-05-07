@@ -48,4 +48,446 @@ int main()
 
 //Multi Level inheritance
 
+#include <iostream>
 
+using namespace std;
+// Base Class or Parent class
+class Player
+{
+public:
+    string name;
+    int runs;
+
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setRuns(int r)
+    {
+        runs = r;
+    }
+};
+// Dervied Class or Child class
+class Cricketer : public Player
+{
+public:
+    string country;
+    void setCountry(string s)
+    {
+        country = s;
+    }
+};
+
+// Dervied Class or Child class of Cricketer class
+class Batter : public Cricketer
+{
+public:
+    int centuries;
+    void setCenturies(int c)
+    {
+        centuries = c;
+    }
+    void show()
+    {
+        cout << "Name: " << name << endl;
+        cout << "Runs: " << runs << endl;
+        cout << "Country: " << country << endl;
+        cout << "Centuries: " << centuries << endl;
+    }
+};
+int main()
+{
+    int runs;
+    cin >> runs;
+    Batter c1;
+    c1.setCountry("India");
+    c1.setName("Virat kohli");
+    c1.setRuns(runs);
+    c1.setCenturies(43);
+    c1.show();
+    return 0;
+}
+
+//Multiple inheritance
+
+#include <iostream>
+
+using namespace std;
+// Base Class or Parent class
+class Player
+{
+public:
+    string name;
+    int runs;
+
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setRuns(int r)
+    {
+        runs = r;
+    }
+};
+// Dervied Class or Child class
+class Cricketer : public Player
+{
+public:
+    string country;
+    void setCountry(string s)
+    {
+        country = s;
+    }
+    void show()
+    {
+        cout << "Name: " << name << endl;
+        cout << "Runs: " << runs << endl;
+        cout << "Country: " << country << endl;
+    }
+};
+
+class Footballer : public Player
+{
+public:
+    string club;
+    int goals;
+    void setClub(string c, int goals)
+    {
+        club = c;
+        this->goals = goals;
+    }
+
+    void show()
+    {
+        cout << "Name: " << name << endl;
+
+        cout << "Club: " << club << endl;
+        cout << "Goals: " << goals << endl;
+    }
+};
+
+int main()
+{
+    int runs;
+    cin >> runs;
+    Cricketer c1;
+    c1.setCountry("India");
+    c1.setName("Virat kohli");
+    c1.setRuns(runs);
+    c1.show();
+
+    Footballer f1;
+    f1.setName("Sunil Chhetri");
+    f1.setClub("Bengluru fc", 85);
+    f1.show();
+    return 0;
+}
+
+// heirarchial inheritance
+
+#include <iostream>
+
+using namespace std;
+// Base Class or Parent class
+class Player
+{
+public:
+    string name;
+    int runs;
+
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setRuns(int r)
+    {
+        runs = r;
+    }
+};
+// Dervied Class or Child class
+class Cricketer : public Player
+{
+public:
+    string country;
+    void setCountry(string s)
+    {
+        country = s;
+    }
+    void show()
+    {
+        cout << "Name: " << name << endl;
+        cout << "Runs: " << runs << endl;
+        cout << "Country: " << country << endl;
+    }
+};
+
+class Footballer : public Player
+{
+public:
+    string club;
+    int goals;
+    void setClub(string c, int goals)
+    {
+        club = c;
+        this->goals = goals;
+    }
+
+    void show()
+    {
+        cout << "Name: " << name << endl;
+
+        cout << "Club: " << club << endl;
+        cout << "Goals: " << goals << endl;
+    }
+};
+
+int main()
+{
+    int runs;
+    cin >> runs;
+    Cricketer c1;
+    c1.setCountry("India");
+    c1.setName("Virat kohli");
+    c1.setRuns(runs);
+    c1.show();
+
+    Footballer f1;
+    f1.setName("Sunil Chhetri");
+    f1.setClub("Bengluru fc", 85);
+    f1.show();
+    return 0;
+}
+
+//virtual function
+
+#include <iostream>
+
+using namespace std;
+// Base Class or Parent class
+class Player
+{
+public:
+    string name;
+    int runs;
+
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setRuns(int r)
+    {
+        runs = r;
+    }
+    virtual void show()
+    {
+        cout << "Virtaul Fun" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Runs: " << runs << endl;
+    }
+};
+// Dervied Class or Child class
+class Cricketer : public Player
+{
+public:
+    string country;
+    Cricketer(string s)
+    {
+        country = s;
+    }
+
+    void show()
+    {
+        cout << "Child fun call" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Runs: " << runs << endl;
+        cout << "Country: " << country << endl;
+    }
+};
+
+int main()
+{
+    int runs;
+    cin >> runs;
+    Cricketer c1("India");
+    c1.setName("Virat kohli");
+    c1.setRuns(runs);
+    c1.show();
+    return 0;
+}
+
+//pure virtual function
+
+#include <iostream>
+
+using namespace std;
+// Base Class or Parent class
+class Player
+{
+public:
+    string name;
+    int runs;
+
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setRuns(int r)
+    {
+        runs = r;
+    }
+    virtual void show() = 0; // NUll
+};
+// Dervied Class or Child class
+class Cricketer : public Player
+{
+public:
+    string country;
+    Cricketer(string s)
+    {
+        country = s;
+    }
+
+    void show()
+    {
+        cout << "Child fun call" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Runs: " << runs << endl;
+        cout << "Country: " << country << endl;
+    }
+};
+
+int main()
+{
+    int runs;
+    cin >> runs;
+    Cricketer c1("India");
+    c1.setName("Virat kohli");
+    c1.setRuns(runs);
+    c1.show();
+    return 0;
+}
+
+// Create a college management system. in that a single parent class of college extended with a student and teacher class.
+teacher= name,age; student= roll no,email-id,subject,batch, course; teacher=department,salary
+call a virtual function to show their classes.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Parent Class
+class College
+{
+protected:
+    string name;
+    int age;
+
+public:
+    College(string n, int a)
+    {
+        name = n;
+        age = a;
+    }
+
+    // Virtual Function
+    virtual void showDetails()
+    {
+        cout << "College Member Details" << endl;
+    }
+
+    // Pure Virtual Function (implemented by child classes)
+    virtual void showClass() = 0;
+};
+
+// Student Class
+class Student : public College
+{
+private:
+    int rollNo;
+    string email;
+    string subject;
+    string batch;
+    string course;
+
+public:
+    Student(string n, int a, int r, string e,
+            string s, string b, string c)
+        : College(n, a)
+    {
+        rollNo = r;
+        email = e;
+        subject = s;
+        batch = b;
+        course = c;
+    }
+
+    void showDetails() override
+    {
+        cout << "\n--- Student Details ---" << endl;
+        cout << "Name      : " << name << endl;
+        cout << "Age       : " << age << endl;
+        cout << "Roll No   : " << rollNo << endl;
+        cout << "Email ID  : " << email << endl;
+        cout << "Subject   : " << subject << endl;
+        cout << "Batch     : " << batch << endl;
+        cout << "Course    : " << course << endl;
+    }
+
+    // Implementing Pure Virtual Function
+    void showClass() override
+    {
+        cout << "Student attends " << subject << " class." << endl;
+    }
+};
+
+// Teacher Class
+class Teacher : public College
+{
+private:
+    string department;
+    double salary;
+
+public:
+    Teacher(string n, int a, string d, double s)
+        : College(n, a)
+    {
+        department = d;
+        salary = s;
+    }
+
+    void showDetails() override
+    {
+        cout << "\n--- Teacher Details ---" << endl;
+        cout << "Name       : " << name << endl;
+        cout << "Age        : " << age << endl;
+        cout << "Department : " << department << endl;
+        cout << "Salary     : " << salary << endl;
+    }
+
+    // Implementing Pure Virtual Function
+    void showClass() override
+    {
+        cout << "Teacher teaches in " << department << " department." << endl;
+    }
+};
+
+// Main Function
+int main()
+{
+    Student s1("Rahul", 20, 101,
+               "rahul@gmail.com",
+               "Maths", "2024",
+               "BCA");
+
+    Teacher t1("Sharma Sir", 40,
+               "Computer Science", 50000);
+
+    // Calling Virtual Functions
+    s1.showDetails();
+    s1.showClass();
+
+    t1.showDetails();
+    t1.showClass();
+
+    return 0;
+}
