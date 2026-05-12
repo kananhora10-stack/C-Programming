@@ -1,0 +1,140 @@
+//Reverse words in a string
+
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+string reverseWords(string s) {
+    stringstream ss(s);
+    vector<string> words;
+    string word;
+
+    // Extract words (automatically ignores extra spaces)
+    while (ss >> word) {
+        words.push_back(word);
+    }
+
+    // Reverse the words
+    reverse(words.begin(), words.end());
+
+    // Join words with single spaces
+    string result;
+    for (int i = 0; i < words.size(); i++) {
+        result += words[i];
+        if (i != words.size() - 1) {
+            result += " ";
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    string s = "  hello   world  ";
+
+    cout << reverseWords(s);
+
+    return 0;
+}
+
+// Linear search
+
+#include<iostream>
+using namespace std;
+
+class Solution{
+public:
+    int LinearSearch(int arr[], int n, int target){
+        for(int i=0;i<n;i++){
+            if(arr[i] == target){
+                return i;
+            }
+        }
+        return -1;
+    }
+};
+
+int main(){
+    int arr[5]={1,2,3,4,5};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int target;
+    cout<<"Enter the target to search : ";
+    cin>>target;
+
+    Solution s1;
+    int ans = s1.LinearSearch(arr, n, target);
+    if(ans != -1){
+        cout<<"Target found at index : "<<ans<<endl;
+    }
+    else{
+        cout<<"Target not found in the array."<<endl;
+    }
+    return 0;
+}
+
+//Binary Search
+
+#include <iostream>
+
+using namespace std;
+class Solution
+{
+public:
+    int Binary_Search(int nums[], int n, int target)
+    {
+        int start = 0;
+        int end = n - 1;
+        while (start < end)
+        {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] < target)
+                start = mid + 1;
+            else
+                end = mid - 1;
+        }
+        return -1;
+    }
+};
+int main()
+{
+    int arr[5] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    Solution s1;
+    int ans = s1.Binary_Search(arr, n, 3);
+    cout << "Element found at index: " << ans << endl;
+
+    return 0;
+}
+
+//missing number in an array
+
+#include<iostream>
+using namespace std;
+
+int findMissing(int arr[], int n) {
+    int total = (n * (n + 1)) / 2; // Sum of 1 to n
+    int sum = 0;
+
+    for (int i = 0; i < n - 1; i++) {
+        sum += arr[i];
+    }
+
+    return total - sum;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 5};
+    int n = 5;
+
+    cout << "Missing number is: " << findMissing(arr, n) << endl;
+
+    return 0;
+}
+
+
+
+
