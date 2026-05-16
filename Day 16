@@ -1,0 +1,25 @@
+// Tree
+
+#include<iostream>
+ using namespace std;
+ 
+ class TreeNode{
+    public:
+    int data;
+    TreeNode * left;
+    TreeNode * right;
+    TreeNode ( int x){
+        this->data = x;
+        left=right=NULL;
+    }
+ };
+ 
+ int main(){
+     TreeNode * T1 = new TreeNode (1);
+     TreeNode * T2 = new TreeNode (2);
+     TreeNode * T3 = new TreeNode (3);
+     
+     T1->left = T2;
+     T1->right = T3;
+     cout << T1->data<< T1->left->data<< T1->right->data<<endl;
+ }
